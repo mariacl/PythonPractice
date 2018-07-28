@@ -1,0 +1,10 @@
+/en-us/provisioning/blablabla/blablapage.html
+
+/en-us/blablabla/blabla/blarequeteblapage.html
+
+/en-us/thisandthat.html
+
+/en-us/image.bmp
+
+/en-us/blabla/image.bmp
+
