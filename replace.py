@@ -43,22 +43,22 @@ def replace ():
 
 #Frames/labels
 titleLabel = Label(main, text="Replace Stuff 1.0", font=titleFont, background = "light blue" )
-titleLabel.grid(row=0, column=0, sticky=W)
+titleLabel.grid(padx=10, pady= 5, row=0, column=0, sticky=W)
 
 inputFileLabel =  Label(main, text="Input file path:", font=lableFont, background = "light blue" )
-inputFileLabel.grid(row=3, column=0, sticky=W)
+inputFileLabel.grid(padx=10, row=3, column=0, sticky=W)
 
 outputFileLabel =  Label(main, text="Output file path:", font=lableFont, background = "light blue" )
-outputFileLabel.grid(row=4, column=0, sticky=W)
+outputFileLabel.grid(padx=10, row=4, column=0, sticky=W)
 
 regLabel =  Label(main, text="Regex:", font=lableFont, background = "light blue" )
-regLabel.grid(row=5, column=0, sticky=W)
+regLabel.grid(padx=10, row=5, column=0, sticky=W)
 
 changeLabel =  Label(main, text="Substring to change:", font=lableFont, background = "light blue" )
-changeLabel.grid(row=6, column=0, sticky=W)
+changeLabel.grid(padx=10, row=6, column=0, sticky=W)
 
 substLabel =  Label(main, text="Replace with:", font=lableFont, background = "light blue" )
-substLabel.grid(row=7, column=0, sticky=W)
+substLabel.grid(padx=10, row=7, column=0, sticky=W)
 
 #Entry boxes
 
@@ -82,7 +82,7 @@ entryBoxSubst.grid(row=7, column=10, sticky=W)
 #Importing buttons
 
 ReplaceButton = Button(main, text="Replace", width=30, command = replace)
-ReplaceButton.grid(row=40, column=10, sticky=W)
+ReplaceButton.grid(pady=10, row=40, column=10, sticky=W)
 
 # ==============================
 
