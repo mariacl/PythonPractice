@@ -17,7 +17,8 @@ def replace ():
     inputf = entryBoxInputFile.get()
     outputf = entryBoxOutputFile.get()
     reg = entryBoxReg.get()
-    subst = entryBoxReplaceWith.get()
+    change = entryBoxChange.get()
+    subst = entryBoxSubst.get()
 
 
     input_file = open(inputf, "r")
@@ -30,7 +31,7 @@ def replace ():
     for line in input_file:
         match = re.search(lookfor, line) # we put en-us html finds in a variable
         if match:
-            replaced = re.sub('en-us', replacewith, line) # make ths substitution on found matches
+            replaced = re.sub(change, replacewith, line) # make ths substitution on found matches
             output_file.write(replaced) # write line with the replacement
         else:
             output_file.write(line) # write any other no matching lines
@@ -52,11 +53,11 @@ entryBoxOutputFile.grid(row=4, column=0, sticky=W)
 entryBoxReg = Entry(main, width=20, bg="light grey")
 entryBoxReg.grid(row=5, column=0, sticky=W)
 
-# entryBoxSubs = Entry(main, width=20, bg="light grey") In case we want to give opportunity to enter something other than en-us
-# entryBoxSubs.grid(row=3, column=0, sticky=W)
+entryBoxChange = Entry(main, width=20, bg="light grey") # In case we want to give opportunity to enter something other than 'en-us'
+entryBoxChange.grid(row=6, column=0, sticky=W)
 
-entryBoxReplaceWith = Entry(main, width=20, bg="light grey")
-entryBoxReplaceWith.grid(row=6, column=0, sticky=W)
+entryBoxSubst = Entry(main, width=20, bg="light grey")
+entryBoxSubst.grid(row=7, column=0, sticky=W)
 
 
 
