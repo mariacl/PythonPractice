@@ -6,6 +6,7 @@ import re
 main = Tk()
 main.title("Replace Stuff 1.0")
 main.geometry("400x400")
+main.configure(background = "light blue")
 
 
 
@@ -39,35 +40,50 @@ def replace ():
 
 
 #Frames/labels
-Label(main, text="Replace en-us 1.0", font=16).grid(row=0, column=0, sticky=W)
+titleLabel = Label(main, text="Replace Stuff 1.0", font=16, background = "light blue" )
+titleLabel.grid(row=0, column=0, sticky=W)
 
+inputFileLabel =  Label(main, text="Input file path:", font=10, background = "light blue" )
+inputFileLabel.grid(row=3, column=0, sticky=W)
 
-#EntryBox
+outputFileLabel =  Label(main, text="Output file path:", font=10, background = "light blue" )
+outputFileLabel.grid(row=4, column=0, sticky=W)
 
-entryBoxInputFile = Entry(main, width=20, bg="light grey")
-entryBoxInputFile.grid(row=3, column=0, sticky=W)
+regLabel =  Label(main, text="Regex:", font=10, background = "light blue" )
+regLabel.grid(row=5, column=0, sticky=W)
 
-entryBoxOutputFile =  Entry(main, width=20, bg="light grey")
-entryBoxOutputFile.grid(row=4, column=0, sticky=W)
+changeLabel =  Label(main, text="Substring to change:", font=10, background = "light blue" )
+changeLabel.grid(row=6, column=0, sticky=W)
 
-entryBoxReg = Entry(main, width=20, bg="light grey")
-entryBoxReg.grid(row=5, column=0, sticky=W)
+substLabel =  Label(main, text="Replace with:", font=10, background = "light blue" )
+substLabel.grid(row=7, column=0, sticky=W)
 
-entryBoxChange = Entry(main, width=20, bg="light grey") # In case we want to give opportunity to enter something other than 'en-us'
-entryBoxChange.grid(row=6, column=0, sticky=W)
+#Entry boxes
 
-entryBoxSubst = Entry(main, width=20, bg="light grey")
-entryBoxSubst.grid(row=7, column=0, sticky=W)
+entryBoxInputFile = Entry(main, width=40, bg="light grey")
+entryBoxInputFile.grid(row=3, column=10, sticky=W)
 
+entryBoxOutputFile =  Entry(main, width=40, bg="light grey")
+entryBoxOutputFile.grid(row=4, column=10, sticky=W)
 
+entryBoxReg = Entry(main, width=40, bg="light grey")
+entryBoxReg.grid(row=5, column=10, sticky=W)
+
+entryBoxChange = Entry(main, width=40, bg="light grey") # In case we want to give opportunity to enter something other than 'en-us'
+entryBoxChange.grid(row=6, column=10, sticky=W)
+
+entryBoxSubst = Entry(main, width=40, bg="light grey")
+entryBoxSubst.grid(row=7, column=10, sticky=W)
 
 
 
 #Importing buttons
 
 ReplaceButton = Button(main, text="Replace", width=30, command = replace)
-ReplaceButton.grid(row=7, column=10, sticky=W)
+ReplaceButton.grid(row=40, column=10, sticky=W)
+
+# ==============================
 
 main.mainloop()
-# ==============================
+
 
