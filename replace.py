@@ -1,13 +1,16 @@
 # Replace a substring
 
 from tkinter import *
+from tkinter.font import Font
 import re
 
 main = Tk()
 main.title("Replace Stuff 1.0")
-main.geometry("400x400")
+main.geometry("500x300")
 main.configure(background = "light blue")
 
+titleFont = Font(family="Verdana", size=16)
+lableFont = Font(family="Verdana", size=10)
 
 
 #Subrutinas
@@ -15,16 +18,15 @@ main.configure(background = "light blue")
 
 def replace ():
     
+    # entradas de etiquetas
     inputf = entryBoxInputFile.get()
     outputf = entryBoxOutputFile.get()
     reg = entryBoxReg.get()
     change = entryBoxChange.get()
     subst = entryBoxSubst.get()
 
-
     input_file = open(inputf, "r")
     output_file = open(outputf, "w")
-    
 
     lookfor = re.compile(reg) # string pattern we are looking for. If you want the level separator / you need to include it, because .* won't match it.
     replacewith = subst #substring replacement
@@ -40,22 +42,22 @@ def replace ():
 
 
 #Frames/labels
-titleLabel = Label(main, text="Replace Stuff 1.0", font=16, background = "light blue" )
+titleLabel = Label(main, text="Replace Stuff 1.0", font=titleFont, background = "light blue" )
 titleLabel.grid(row=0, column=0, sticky=W)
 
-inputFileLabel =  Label(main, text="Input file path:", font=10, background = "light blue" )
+inputFileLabel =  Label(main, text="Input file path:", font=lableFont, background = "light blue" )
 inputFileLabel.grid(row=3, column=0, sticky=W)
 
-outputFileLabel =  Label(main, text="Output file path:", font=10, background = "light blue" )
+outputFileLabel =  Label(main, text="Output file path:", font=lableFont, background = "light blue" )
 outputFileLabel.grid(row=4, column=0, sticky=W)
 
-regLabel =  Label(main, text="Regex:", font=10, background = "light blue" )
+regLabel =  Label(main, text="Regex:", font=lableFont, background = "light blue" )
 regLabel.grid(row=5, column=0, sticky=W)
 
-changeLabel =  Label(main, text="Substring to change:", font=10, background = "light blue" )
+changeLabel =  Label(main, text="Substring to change:", font=lableFont, background = "light blue" )
 changeLabel.grid(row=6, column=0, sticky=W)
 
-substLabel =  Label(main, text="Replace with:", font=10, background = "light blue" )
+substLabel =  Label(main, text="Replace with:", font=lableFont, background = "light blue" )
 substLabel.grid(row=7, column=0, sticky=W)
 
 #Entry boxes
