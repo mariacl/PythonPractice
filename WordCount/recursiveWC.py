@@ -1,5 +1,6 @@
 # Maria C. Laguardia
-# Returns total words after counting recursively in a folder of markdown files.
+# Recursive wordcounts (method 1)
+# Returns total words after counting recursively in a folder of markdown files. 
 
 import os
 
